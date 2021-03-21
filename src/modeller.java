@@ -41,9 +41,10 @@ public class modeller {
 			}
 			//call to conduct modeling with process list
 			
+			FCFS fcfs= new FCFS(processes,numP);
 			//Output of results
-			System.out.println("The Average Waiting Time was: ");
-			System.out.println("The Average Turnaround Time was: ");
+			System.out.println("The Average Waiting Time was: "+fcfs.averageWaitTime());
+			System.out.println("The Average Turnaround Time was: "+fcfs.averageTurnAroundTime());
 			
 		}else if (schedueller.equals("SJF")) {
 			//New List to hold processes
@@ -76,20 +77,17 @@ public class modeller {
 				arivalTime = scan.nextInt();
 				
 				System.out.println("Burst Time: ");
-				burstTime = scan.nextInt();
-				
-				System.out.println("Enter Priority");
-				processPriority = scan.nextInt();
-				
+				burstTime = scan.nextInt();			
+				id="P"+(p+1)+"";
 				//creating and storing new process with found info
-				process newProcess = new process(arivalTime, burstTime);
+				process newProcess = new process(arivalTime, burstTime,id);
 				processes.add(newProcess);				
 			}
 			//call to conduct modeling with process list
-			
+			SRTF sjf= new SRTF (processes,numP);
 			//Output of results
-			System.out.println("The Average Waiting Time was: ");
-			System.out.println("The Average Turnaround Time was: ");
+			System.out.println("The Average Waiting Time was: "+sjf.averageWaitTime());
+			System.out.println("The Average Turnaround Time was: "+sjf.averageTurnAroundTime());
 		}else if (schedueller.equals("PS")) {
 			// New List to hold processes
 			ArrayList<process> processes = new ArrayList<process>();
