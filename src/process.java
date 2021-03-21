@@ -5,7 +5,8 @@ public class process implements java.lang.Comparable<process> {
 	int processPriority;
 	String processNum;
 	int numOfProcess;
-
+	String id;
+	
 	public process(int aTime, int bTime) {
 		this.arrivalTime = aTime;
 		this.burstTime = bTime;
@@ -16,7 +17,14 @@ public class process implements java.lang.Comparable<process> {
 		this.burstTime = bTime;
 		this.processPriority = priority;
 	}
-
+	
+	public process(int aTime, int bTime, String id)
+	{
+		this.arrivalTime = aTime;
+		this.burstTime = bTime;
+		this.id = id;
+	}
+	
 	public process(String processNum, int numOfProcess, int burstTime, int processPriority) {
 		this.processNum = processNum;
 		this.numOfProcess = numOfProcess;
@@ -58,6 +66,9 @@ public class process implements java.lang.Comparable<process> {
 		this.processPriority = processPriority;
 	}
 
+	public String getId(){
+		return id;
+	}
 	@Override
 	public int compareTo(process compareProcess) {
 		int comparePriority = ((process) compareProcess).getProcessPriority();
