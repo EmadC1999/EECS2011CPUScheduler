@@ -70,7 +70,7 @@ public class process implements java.lang.Comparable<process> {
 		return id;
 	}
 	@Override
-	public int compareTo(process compareProcess) {
+	public int compareTo(process compareProcess) { // function that compares the process priority
 		int comparePriority = ((process) compareProcess).getProcessPriority();
 		return this.processPriority - comparePriority;
 	}
