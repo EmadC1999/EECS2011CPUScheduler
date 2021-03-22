@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /* Class to conduct modeling of multiple scheduling algorithms with different processes */
@@ -6,6 +7,7 @@ public class modeller {
 	public static void main(String [] args) {
 		String schedueller;
 		int numP;
+		String id;
 		int arivalTime = 0;
 		int burstTime = 0;
 		int processPriority;

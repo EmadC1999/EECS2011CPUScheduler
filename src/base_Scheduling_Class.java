@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class base_Scheduling_Class {
 
@@ -18,6 +19,17 @@ public class base_Scheduling_Class {
 	public double averageTurnAroundTime() {
 		double turnArouindWait = this.totalTurnAroundTime / this.numProcesses;
 		return turnArouindWait;
+	}
+	//Method to calculate average wait time of processes sent to scheduler
+		public double averageWaitTime(double totalWaitTime, double num) {
+			
+			double wait = totalWaitTime/ num;
+			return wait;
+	}
+	//Method to calculate average TurnAround time of processes sent to scheduler
+	public double averageTurnAroundTime(double totalTurnAroundTime, double num) {
+			double turnArouindWait =  totalTurnAroundTime / num ;
+			return turnArouindWait;
 	}
 	//merge sort algorithm to sort processes according to their arrival time
 	//this method recursively splits the arrayList of processes into two 
