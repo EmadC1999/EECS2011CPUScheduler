@@ -11,7 +11,6 @@ public class modeller {
 		int arivalTime = 0;
 		int burstTime = 0;
 		int processPriority;
-		String id;
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -177,32 +176,51 @@ public class modeller {
 			//Output of results
 			System.out.println("The Average Waiting Time was: " + scheduler.averageWaitTime());
 			System.out.println("The Average Turnaround Time was: " + scheduler.averageTurnAroundTime());
+			
+		//Different Implentation only for Round Robin
 		}else if (schedueller.equals("P-RR")) {
+			int [] process = new int[40];
+			int [] bursttime = new int [40];
+			int []  waittime = new int [40];
+ 			int [] completionTime = new int[40];
+			int [] arrivaltime = new int[40]; 
+			int [] tatTime = new int[40];
 			//New List to hold processes
 			ArrayList<process> processes = new ArrayList<process>();
 			
 			//Loop to store info for each process
 			for(int p = 0; p < numP; p++) {
 				System.out.println("Enter Info For Process " + (p + 1) + ": ");
-				System.out.println("Arival Time: ");
-				arivalTime = scan.nextInt();
+				System.out.println("process: ");
+				process[p]= scan.nextInt();
 				
+				System.out.println("wait time: ");
+				waittime[p]= scan.nextInt();
+				System.out.println("tatTime: ");
+				tatTime[p] = scan.nextInt();
 				System.out.println("Burst Time: ");
-				burstTime = scan.nextInt();
+				bursttime[p] = scan.nextInt();
 				
-				System.out.println("Enter Priority");
-				processPriority = scan.nextInt();
+				System.out.println("completionTime: ");
+				completionTime[p]= scan.nextInt();
 				
-				//creating and storing new process with found info
-				process newProcess = new process(arivalTime, burstTime, processPriority);
-				processes.add(newProcess);				
+				System.out.println("arival time: ");
+				arrivaltime[p] = scan.nextInt();
+				
 			}
+			try {
+				RR.waitTime(process, waittime, bursttime, 1, completionTime, arrivaltime, numP);
+				RR.turnaroundTime(process, waittime, bursttime, tatTime, completionTime, arrivaltime, numP);
+				RR.averageTime( process, bursttime, 1, arrivaltime, numP);
+			}catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+
 			//call to conduct modeling with process list
 			
 			//Output of results
-			System.out.println("The Average Waiting Time was: ");
-			System.out.println("The Average Turnaround Time was: ");
-		}
+			
 		
+		}
 	}
 }
