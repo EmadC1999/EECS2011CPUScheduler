@@ -101,15 +101,10 @@ public class modeller {
 
 				System.out.println("Burst Time: ");
 				burstTime = scan.nextInt();
-				if (burstTime < 0) {
-					
-				}
+				
 				System.out.println("Enter Priority");
 				processPriority = scan.nextInt();
-				if (burstTime < 0) {
-					
-				}
-
+				
 				// creating and storing new process with found info
 				process newProcess = new process(arivalTime, burstTime, processPriority);
 				processes.add(newProcess);
