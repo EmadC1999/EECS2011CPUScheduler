@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-/* Class to conduct modeling of multiple scheduling algorithms with different processes */
+/* Class to conduct modeling of multiple scheduling algorithms with different processes 
+ * The github for the project is at https://github.com/EmadC1999/EECS2011CPUScheduler */
 public class modeller {
 	public static void main(String [] args) {
 		String schedueller;
