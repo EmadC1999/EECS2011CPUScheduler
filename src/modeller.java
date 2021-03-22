@@ -11,7 +11,7 @@ public class modeller {
 		int arivalTime = 0;
 		int burstTime = 0;
 		int processPriority;
-		
+		String id;
 		
 		Scanner scan = new Scanner(System.in);
 		
